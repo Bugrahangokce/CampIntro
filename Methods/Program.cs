@@ -50,8 +50,35 @@ namespace Methods
 
             sepetManager.Ekle2("Armut", "Yeşil armut", 12);
 
+            Add();
+            var result2 = Add2(5,6,7);
+            Console.WriteLine(result2);
+
+            Console.WriteLine(Add4(2,34,34,3,43,43));
 
             Console.ReadLine();
+        }
+
+        static void Add()
+        {
+            Console.WriteLine("Added!");
+        }
+
+        static int Add2(int sayi1, int sayi2)
+        {
+            var result = sayi1 + sayi2;
+            return result;
+        }
+
+        static int Add2(int sayi1, int sayi2, int sayi3)
+        {
+            var result = sayi1 + sayi2 + sayi3; 
+            return result;
+        }
+
+        static int Add4(params int[] numbers)//param
+        {
+            return numbers.Sum();
         }
     }
 }
