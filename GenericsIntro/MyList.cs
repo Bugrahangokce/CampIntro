@@ -25,11 +25,12 @@ namespace GenericsIntro
             } 
 
             items[items.Length - 1] = item;
-
-            foreach (var itemForEach in items)
-            {
-                Console.WriteLine(itemForEach);
-            }
         }
+
+        public int Length
+        {
+            get { return items.Length; }
+        }
+
     }
 }
