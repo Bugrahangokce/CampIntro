@@ -13,13 +13,17 @@ namespace GenericsIntro
 
             MyList<string> isimler = new MyList<string>();
             isimler.Add("Buğrahan");
+
+            Console.WriteLine(isimler.Length);
+
             isimler.Add("Emir");
-            isimler.Add("Pınar");
 
+            Console.WriteLine(isimler.Length);
 
-
-
-
+            foreach (var isim in isimler.Items)
+            {
+                Console.WriteLine(isim);
+            }
 
 
             //string[] test = new string[] {"","","" };
