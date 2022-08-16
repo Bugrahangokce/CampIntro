@@ -6,13 +6,19 @@ using System.Threading.Tasks;
 
 namespace OOP3
 {
-    internal class ApplicationManager
+    internal class RecourseManager
     {
-        public void MakeAnApplication(ICreditManager creditManager)
+        //Method injection
+        public void MakeAnRecourse(ICreditManager creditManager, List<ILoggerService> loggerServices)
         {
             //Başvuran bilgilerini değerlendirme
             //
             creditManager.Calculate();
+            foreach (var loggerService in loggerServices)
+            {
+                loggerService.Log();
+            }
+            
         }
         
         public void MakeALoanPreInformation(List<ICreditManager> credits)

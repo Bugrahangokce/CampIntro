@@ -43,8 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApplicationManager.cs" />
-    <Compile Include="CreditManager.cs" />
+    <Compile Include="DatabaseLoggerService.cs" />
+    <Compile Include="FileLoggerService.cs" />
+    <Compile Include="ILoggerService.cs" />
+    <Compile Include="RecourseManager.cs" />
+    <Compile Include="ICreditManager.cs" />
     <Compile Include="HousingCreditManager.cs" />
     <Compile Include="NeedCreditManager.cs" />
     <Compile Include="Program.cs" />

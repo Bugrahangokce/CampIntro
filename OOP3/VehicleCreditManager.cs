@@ -14,7 +14,7 @@ namespace OOP3
         }
 
         public void Calculate()
-        {
+        { 
             //
             //
 

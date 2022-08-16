@@ -13,15 +13,22 @@ namespace OOP3
             ICreditManager needCreditManager = new NeedCreditManager();        
             ICreditManager vehicleCreditManager = new VehicleCreditManager();           
             ICreditManager housingCreditManager = new HousingCreditManager();
-            
-            ApplicationManager applicationManager = new ApplicationManager();
-            applicationManager.MakeAnApplication(needCreditManager);
+
+            ILoggerService databaseLoggerService = new DatabaseLoggerService();
+            ILoggerService fileLoggerService = new FileLoggerService();
+
+            RecourseManager recourseManager = new RecourseManager();
+            //Alternatif
+            //recourseManager.MakeAnRecourse(needCreditManager, new DatabaseLoggerService());
+            List<ILoggerService> loggers = new List<ILoggerService>() { databaseLoggerService, fileLoggerService };
+            recourseManager.MakeAnRecourse(needCreditManager, loggers);
 
             Console.WriteLine("------");
 
             List<ICreditManager> credits = new List<ICreditManager>() {needCreditManager, vehicleCreditManager };
+           
 
-            applicationManager.MakeALoanPreInformation(credits);
+            recourseManager.MakeALoanPreInformation(credits);
 
             Console.ReadLine();
         }
